@@ -1,0 +1,22 @@
+package com.example.fanproject.controller;
+
+import com.example.fanproject.model.Fan;
+import com.example.fanproject.service.FanService;
+import com.example.fanproject.service.impl.FanServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
+
+@RestController
+public class FanController {
+    @Autowired
+    private FanService fanService;
+
+    @RequestMapping(value="/getFans", method = RequestMethod.GET)
+    public List<Fan> getAllFans(){
+        return fanService.getAllFans();
+    }
+}
