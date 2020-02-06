@@ -17,6 +17,17 @@ public class User {
     @Column
     private String password;
 
+    @Column
+    private String image;
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
     public String getUsername() {
         return username;
     }

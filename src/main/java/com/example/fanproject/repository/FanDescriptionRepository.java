@@ -1,10 +1,11 @@
 package com.example.fanproject.repository;
 
 import com.example.fanproject.model.Fan;
+import com.example.fanproject.model.FanDescription;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
-public interface FanRepository extends JpaRepository<Fan, Integer> {
-    List<Fan> findByFanDescription_Manufacturer(String manufacturer);
+public interface FanDescriptionRepository extends JpaRepository<FanDescription, Integer> {
+
 }
