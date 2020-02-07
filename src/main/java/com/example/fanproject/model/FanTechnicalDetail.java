@@ -1,7 +1,5 @@
 package com.example.fanproject.model;
 
-import com.sun.tools.javah.Gen;
-
 import javax.persistence.*;
 
 @Entity
