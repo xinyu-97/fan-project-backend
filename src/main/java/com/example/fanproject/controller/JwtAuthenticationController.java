@@ -38,7 +38,9 @@ public class JwtAuthenticationController {
 
         final String token = jwtTokenUtil.generateToken(userDetails);
 
-        return ResponseEntity.ok(new JwtResponse(token, authenticationRequest.getUsername(), jwtTokenUtil.getExpirationDateFromToken(token)));
+        final User user = userDetailsService.getUserByUsername(authenticationRequest.getUsername());
+
+        return ResponseEntity.ok(new JwtResponse(token, authenticationRequest.getUsername(), jwtTokenUtil.getExpirationDateFromToken(token), user.getImage()));
     }
 
 

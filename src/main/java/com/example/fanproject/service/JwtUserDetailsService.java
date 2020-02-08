@@ -30,6 +30,11 @@ public class JwtUserDetailsService implements UserDetailsService {
                 new ArrayList<>());
     }
 
+    public User getUserByUsername(String username){
+        User user = userRepository.findByUsername(username);
+        return user;
+    }
+
     public User save(User user){
         String password = user.getPassword();
         user.setPassword(encoder.encode(password));

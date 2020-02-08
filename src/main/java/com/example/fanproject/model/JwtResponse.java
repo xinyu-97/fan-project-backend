@@ -9,16 +9,18 @@ public class JwtResponse implements Serializable {
     private final String jwttoken;
     private final String userName;
     private Date expiredDate;
+    private String image;
 
     public JwtResponse(String jwttoken, String userName) {
         this.jwttoken = jwttoken;
         this.userName = userName;
     }
 
-    public JwtResponse(String jwttoken, String userName, Date expiredDate) {
+    public JwtResponse(String jwttoken, String userName, Date expiredDate, String image) {
         this.jwttoken = jwttoken;
         this.userName = userName;
         this.expiredDate = expiredDate;
+        this.image = image;
     }
 
     public String getToken() {
@@ -31,5 +33,9 @@ public class JwtResponse implements Serializable {
 
     public Date getExpiredDate() {
         return expiredDate;
+    }
+
+    public String getImage() {
+        return image;
     }
 }
