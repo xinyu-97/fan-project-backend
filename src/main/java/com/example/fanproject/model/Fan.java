@@ -15,6 +15,12 @@ public class Fan {
     @Column
     private String image;
 
+    @Column
+    private int pastFirm;
+
+    @Column
+    private int pastGlobal;
+
     @OneToOne
     @JoinColumn(name = "fan_description_id", referencedColumnName = "id")
     private FanDescription fanDescription;
@@ -89,5 +95,21 @@ public class Fan {
 
     public void setImage(String image) {
         this.image = image;
+    }
+
+    public int getPastFirm() {
+        return pastFirm;
+    }
+
+    public void setPastFirm(int pastFirm) {
+        this.pastFirm = pastFirm;
+    }
+
+    public int getPastGlobal() {
+        return pastGlobal;
+    }
+
+    public void setPastGlobal(int pastGlobal) {
+        this.pastGlobal = pastGlobal;
     }
 }
