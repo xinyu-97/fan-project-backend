@@ -10,6 +10,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class JwtUserDetailsService implements UserDetailsService {
@@ -33,6 +34,10 @@ public class JwtUserDetailsService implements UserDetailsService {
     public User getUserByUsername(String username){
         User user = userRepository.findByUsername(username);
         return user;
+    }
+
+    public List<User> getAllUsers(){
+        return userRepository.findAll();
     }
 
     public User save(User user){
